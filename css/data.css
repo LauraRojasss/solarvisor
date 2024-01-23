@@ -1,0 +1,77 @@
+.data-description {
+  padding: 16px;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  background-color: var(--white);
+}
+
+.data-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.data-card {
+  position: relative;
+  border-radius: 5px;
+  width: 320px;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+.data-card-background {
+  /* cover all the card*/
+  width: 100%;
+  height: 100%;
+}
+
+.data-card-background img {
+  /* cover all the card*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.data-card-overlay {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.data-card:hover .data-card-overlay,
+.data-card:focus .data-card-overlay,
+.data-card:hover .data-card-body,
+.data-card:focus .data-card-body {
+  opacity: 1;
+}
+
+.data-card-body {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  color: var(--white);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  transition-delay: 0.01s;
+}
+
+@media (hover: none) {
+  .data-card-body,
+  .data-card-overlay {
+    opacity: 1;
+  }
+}
+
+.data-card-body h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+

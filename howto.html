@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./css/general.css" />
+    <link rel="stylesheet" type="text/css" href="./css/howto.css" />
+    <script src="./general.js" defer></script>
+
+    <title>SolarVisor - Cómo Usar</title>
+  </head>
+
+  <body class="container">
+    <header>
+      <nav class="nav-container">
+        <div id="navbar-logo-container">
+          <a href="/home.html"> SolarVisor </a>
+          <a href="/home.html" id="navbar-logo">
+            <img src="assets/Cenigaa.svg" alt="Cenigaa" />
+          </a>
+        </div>
+        <ul class="navbar">
+          <li class="nav-item">
+            <a class="nav-link" href="/home.html">
+              <img src="assets/house-solid.svg" alt="Inicio" />
+              Inicio
+            </a>
+          </li>
+          <li class="nav-division">|</li>
+          <li class="nav-item">
+            <a class="nav-link" href="/howto.html">
+              <img src="assets/circle-question-solid.svg" alt="Cómo Usar" />
+              Cómo Usar
+            </a>
+          </li>
+          <li class="nav-division">|</li>
+          <li class="nav-item">
+            <a class="nav-link" href="/data.html">
+              <img src="assets/folder-solid.svg" alt="Datos" />
+              Datos
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <h1 id="page-title">¿Cómo usar la plataforma SolarVisor?</h1>
+    <section class="description-section">
+      <div class="description">
+        SolarVisor es una plataforma web que permite visualizar gráficamente las
+        variables de Radiación Solar y Flujo de Fotones Fotosintéticos en áreas
+        específicas del departamento del Huila. Con esta herramienta, se podrá
+        obtener información sobre la cantidad de radiación solar y la intensidad
+        de los fotones fotosintéticos en la ubicación seleccionada dentro de la
+        región mencionada.<br /><br />
+        Para generar los gráficos, se deben seguir los siguientes pasos:
+      </div>
+    </section>
+    <section class="howto-container">
+      <div class="howto-navigation">
+        <ol>
+          <li class="howto-navigation-item">
+            <a href="#step1" class="howto-navigation-link">
+              Navegación en el mapa
+            </a>
+            <ul class="howto-navigation-sublist">
+              <li class="howto-navigation-item">
+                <a href="#step1-1" class="howto-navigation-link">
+                  Mapa - Botones +/-
+                </a>
+              </li>
+              <li class="howto-navigation-item">
+                <a href="#step1-2" class="howto-navigation-link">
+                  Mapa - Interacción con el mouse
+                </a>
+              </li>
+              <li class="howto-navigation-item">
+                <a href="#step1-3" class="howto-navigation-link">
+                  Seleccionar ubicación
+                </a>
+              </li>
+              <li class="howto-navigation-item">
+                <a href="#step1-4" class="howto-navigation-link">
+                  Generar gráfica
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="howto-navigation-item">
+            <a href="#step2" class="howto-navigation-link">
+              Opciones de filtro
+            </a>
+          </li>
+          <li class="howto-navigation-item">
+            <a href="#step3" class="howto-navigation-link"> Visualizaciones </a>
+          </li>
+        </ol>
+      </div>
+      <div class="howto">
+        <div class="step-header" id="step1">Navegación en el mapa</div>
+        <div class="step-text">
+          Cuando la aplicación web de SolarVisor se inicia, se encuentra un (1)
+          mapa interactivo que permite seleccionar una región específica para
+          generar un diagrama climático. Para facilitar la navegación y el
+          análisis, la plataforma ofrece herramientas comunes que se pueden
+          utilizar:
+        </div>
+        <div class="sub-step-header" id="step1-1">Mapa - Botones +/-</div>
+        <div class="step-text">
+          También está la opción de usar los botones de "+" y "-" que se
+          encuentran en la interfaz para acercar o alejar el mapa. Esta función
+          es especialmente útil para ajustar el nivel de zoom de manera más
+          precisa.
+        </div>
+        <div class="sub-step-header" id="step1-2">
+          Mapa - Interacción con el mouse
+        </div>
+        <div class="step-text">
+          Rueda de desplazamiento: Se puede utilizar la rueda de desplazamiento
+          del mouse para acercar o alejar la vista del mapa. Esto permite
+          explorar diferentes áreas con mayor detalle o tener una visión más
+          amplia de la región del departamento del Huila.
+        </div>
+        <div class="sub-step-header" id="step1-3">Seleccionar ubicación</div>
+        <div class="step-text">
+          La plataforma ofrece la posibilidad de elegir los municipios del
+          departamento del Huila que contienen información sobre Radiación Solar
+          y Radiación PAR ya sea dando clic o simplemente pasando el puntero en
+          una posición concreta del mapa, se podrá acceder a los datos de
+          Radiación Solar y/o Radiación PAR para ese municipio en particular. La
+          plataforma facilita esta interacción de manera intuitiva y sencilla,
+          permitiendo explorar la información climática de los diferentes
+          municipios de forma rápida.
+        </div>
+        <div class="sub-step-header" id="step1-4">Generar gráfica</div>
+        <div class="step-text">
+          Después de seleccionar una ubicación en el mapa, se activará un
+          pequeño cuadro de diálogo o "tooltip" que mostrará el nombre del
+          municipio relacionado, junto con un botón etiquetado como "Generar".
+          Para obtener las gráficas correspondientes, los usuarios simplemente
+          deben hacer clic en este botón.
+        </div>
+        <div class="step-image">
+          <img src="./assets/how-to-0.jpg" alt="Ref 0" />
+        </div>
+        <div class="step-header" id="step2">Opciones de filtro</div>
+        <div class="step-text">
+          Una vez presionado el botón "Generar", se desplegará una ventana de
+          diálogo que contendrá toda la información disponible para ese
+          municipio, incluyendo las variables, años y las gráficas
+          correspondientes. <br />
+          En la parte superior de esta ventana, encontrará la opción (1) "Tipo
+          de Información", que le permite filtrar entre Radiación PAR o
+          Radiación Solar según su preferencia. <br />
+          Justo al lado derecho, verá la opción (2) "Año", donde podrá
+          seleccionar el año específico que desea graficar. Por último, en la
+          sección (3) "Estación", también podrá elegir la estación climática de
+          ese municipio que desea incluir en la gráfica.
+        </div>
+        <div class="step-image">
+          <img src="./assets/how-to-1.jpg" alt="Ref 1" />
+        </div>
+        <div class="step-header" id="step3">Visualizaciones</div>
+        <div class="step-text">
+          Después de seleccionar las opciones deseadas, se presentará la
+          siguiente vista: <br />
+          En primer lugar, encontrará (1) una tabla que contiene los datos
+          relativos a la variable de Radiación Solar o Radiación PAR,
+          acompañados de estadísticas descriptivas que incluyen los valores
+          mínimo y máximo, la desviación estándar, la mediana, el rango y el
+          promedio.
+        </div>
+        <div class="step-image">
+          <img src="./assets/how-to-2.jpg" alt="Ref 2" />
+        </div>
+        <div class="step-text">
+          En la columna del promedio (2), observará que los valores se
+          representan mediante una paleta de colores distintivos. Esto se hace
+          con el propósito de facilitar la identificación del mes con la
+          radiación más alta y el mes con la radiación más baja. La coloración
+          se basa en una escala, donde el rojo más oscuro indica la radiación
+          más alta, mientras que el verde más oscuro representa la radiación más
+          baja. También se utilizan colores intermedios como el naranja y el
+          amarillo para representar niveles intermedios de radiación.
+        </div>
+        <div class="step-image">
+          <img
+            src="./assets/how-to-3.jpg"
+            alt="Ref 3"
+            style="width: 1409px"
+          />
+        </div>
+        <div class="step-text">
+          En la parte inferior de la ventana, encontrarás una serie de gráficos
+          (3) que representan visualmente las estadísticas mencionadas
+          anteriormente. Es relevante destacar que los gráficos generados pueden
+          ser exportados como imágenes en formato PNG simplemente haciendo clic
+          en el botón (4) de descarga correspondiente.
+        </div>
+        <div class="step-image">
+          <img
+            src="./assets/how-to-4.jpg"
+            alt="Ref 4"
+            style="width: 1409px"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

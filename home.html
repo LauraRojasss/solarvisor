@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <link rel="stylesheet" type="text/css" href="./css/general.css" />
+    <link rel="stylesheet" type="text/css" href="./css/map.css" />
+    <link rel="stylesheet" type="text/css" href="./css/modal.css" />
+    <link rel="stylesheet" type="text/css" href="./css/charts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/info.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.min.css"
+      integrity="sha512-qm+jY0iQ4Xf5RL79UB75REDLYD0jtvxxVZp2RVIW8sm8RNiHdeN43oksqUPrBIshJtQcVPrAL08ML2Db8fFZiA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>SolarVisor - Radiación</title>
+    <script src="https://d3js.org/d3.v6.js" defer></script>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"
+      integrity="sha512-ceQPs2CHke3gSINLt/JV37W1rfJOM64yuH999hnRhTP7tNtcSBp5hlTKhn8CEIhsFweSBrZMPVotAKjoyxGWNg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      defer
+    ></script>
+    <script src="./general.js" defer></script>
+    <script src="./assets/municipios.js" defer></script>
+    <script src="./map.js" defer></script>
+    <script src="./utils/constants.js" defer></script>
+    <script src="./utils/utils.js" defer></script>
+    <script src="./charts.js" defer></script>
+  </head>
+
+  <body class="container">
+    <header>
+      <nav class="nav-container">
+        <div id="navbar-logo-container">
+          <a href="/home.html"> SolarVisor </a>
+          <a href="/home.html" id="navbar-logo">
+            <img src="assets/Cenigaa.svg" alt="Cenigaa" />
+          </a>
+        </div>
+        <ul class="navbar">
+          <li class="nav-item">
+            <a class="nav-link" href="/home.html">
+              <img src="assets/house-solid.svg" alt="Inicio" />
+              Inicio
+            </a>
+          </li>
+          <li class="nav-division">|</li>
+          <li class="nav-item">
+            <a class="nav-link" href="/howto.html">
+              <img src="assets/circle-question-solid.svg" alt="Cómo Usar" />
+              Guía de usuario
+            </a>
+          </li>
+          <li class="nav-division">|</li>
+          <li class="nav-item">
+            <a class="nav-link" href="/data.html">
+              <img src="assets/folder-solid.svg" alt="Datos" />
+              Datos
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section class="map-section">
+      <!-- <h1 id="page-title">Departamento del Huila y sus municipios</h1> -->
+      <div id="map-container">
+        <div id="map"></div>
+      </div>
+    </section>
+    <section class="info-section">
+      <div class="info-container">
+        <h2 class="info-container--header">Información</h2>
+        <div class="info-container--body">
+          La aplicación SolarVisor ofrece información sobre las variables de radiación solar y radiación PAR por medio de gráficos. Esta información en forma de estadísticas
+          descriptivas proporciona una visión más completa y detallada de la variabilidad y comportamiento de estas variables en cada municipio y en diferentes momentos del
+          tiempo.
+        </div>
+      </div>
+    </section>
+    <section class="info-cards-section">
+      <div class="info-card">
+        <img src="./assets/chart-solid.svg" alt="map" />
+        Al hacer clic en el mapa del departamento del Huila, los usuarios pueden generar gráficos para los municipios con datos disponibles.
+      </div>
+
+      <div class="info-card">
+        <img src="./assets/filter-solid.svg" alt="map" />
+        Además, se puede seleccionar el año y la estación que desean visualizar, mencionando que, cada gráfico cuenta con su respectivo título para una mayor claridad en la
+        interpretación de los datos.
+      </div>
+      <div class="info-card">
+        <img src="./assets/table-solid.svg" alt="filter" />
+        De igual manera, se mostrará una tabla con el resumen de los datos gráficos que incluye estadísticas descriptivas como el promedio, el dato mínimo y máximo, la
+        desviación estándar, la mediana y el rango de los valores de radiación solar y radiación PAR.
+      </div>
+    </section>
+
+    <div class="modal-overlay">
+      <div class="modal">
+        <span id="modal-close">&times;</span>
+        <div id="chart-container">
+          <div id="chart-filters">
+            <label for="town-filter">
+              <input type="text" title="town-filter" id="town-filter" disabled />
+            </label>
+            <label for="data-file-name-filter">
+              <span class="label">Tipo de Información</span>
+              <select class="input" title="data-file-name-filter" id="data-file-name-filter">
+                <option value="PAR.csv" selected>PAR</option>
+                <option value="SOLAR.csv">SOLAR</option>
+              </select>
+            </label>
+            <label for="year-filter">
+              <span class="label">Año</span>
+              <select class="input" title="year-filter" id="year-filter"></select>
+            </label>
+            <label for="station-filter">
+              <span class="label">Estación</span>
+              <select class="input" title="station-filter" id="station-filter"></select>
+            </label>
+          </div>
+          <div id="chart-content">
+            <div class="table-container">
+              <table>
+                <thead id="table-head"></thead>
+                <tbody id="table-body"></tbody>
+              </table>
+            </div>
+            <div id="chart"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="tooltip"></div>
+  </body>
+</html>

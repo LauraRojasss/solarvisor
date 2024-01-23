@@ -1,0 +1,86 @@
+#chart-container {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-container table th,
+.table-container table td {
+  border-bottom: 1px solid var(--gray);
+  padding: 5px;
+}
+.average-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.average-info img {
+  width: 30px;
+  height: 30px;
+}
+
+#chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+#chart-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+#chart-filters label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 600;
+  gap: 5px;
+}
+
+#chart-content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#tooltip {
+  opacity: 0;
+  position: absolute;
+  background-color: var(--white);
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  display: none;
+  z-index: 1000000;
+}
+
+#town-filter {
+  display: none;
+}
